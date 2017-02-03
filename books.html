@@ -1,0 +1,27 @@
+<div class="wrapper">
+	<div class="profile">
+		<!-- <table id= "userdata" border="2">
+			<thead>
+				<th>Book</th>
+				<th>Author</th>
+			</thead>
+			<tbody ng-repeat="x in books">
+			{{ x.book + ' - ' + x.author }}
+			</tbody>
+		</table> -->
+<!-- 		<ul>
+			<li ng-repeat="x in books">
+				{{ x.book + ' - ' + x.author }}
+			</li>
+		</ul> -->
+		<h4 ng-repeat="x in books">
+			{{ x.book + ' --- '}} <span class="author-display">{{ x.author }}</span>
+		</h4>
+		<!-- <h4 ng-repeat="x in books">
+			{{ x.author }}
+		</h4> -->
+	</div>
+</div>
+
+<!-- <script src="bookAuthorCtrl.js"></script> -->
+

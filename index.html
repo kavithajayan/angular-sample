@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <title>My First Work in ANGULAR</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="main">
+<header><a href="#/">SimpleReads</a></header>
+<nav>
+	<a href="#/">Home</a>
+		<a ng-href="#books">Books</a>
+		<a href="#quote">Daily Quote</a>
+		<a href="#notes">Notes</a>
+		<a href="#contact">Contact</a>
+</nav>
+	<div ng-view></div>
+</div>
+
+<script>
+var app = angular.module("myApp", ["ngRoute"]);
+app.config(function($routeProvider) {
+    $routeProvider
+    .when("/", {
+        templateUrl : "home.html"
+    })
+    .when("/books", {
+        templateUrl : "books.html",
+        controller: "bookAuthorCtrl"
+    })
+    .when("/quote", {
+        templateUrl : "quote.html"
+    })
+    .when("/notes", {
+        templateUrl : "notes.html"
+    })
+    .when("/contact", {
+        templateUrl : "contact.html"
+    });
+});
+</script>
+<script src="/bookAuthorController.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" language="javascript" src="/book-author.json"></script> 
+<script>
+
+    $(function() {
+   		var bookAuthor = [];
+
+   		$.getJSON('book-author.json', function(data) {
+       		$.each(data.bookAuthor, function(i, f) {
+          	var tblRow = "<tr>" + "<td>" + f.book + "</td>" +
+           "<td>" + f.author + "</td>" + "</tr>"
+           $(tblRow).appendTo("#userdata tbody");
+     });
+
+   });
+
+});
+</script> -->
+</body>
+</html>
+
+
+
+
+

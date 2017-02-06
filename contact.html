@@ -1,29 +1,33 @@
 <h1>Contact Details as follows</h1>
 
-<form>
+<form novalidate>
 <div class="field-wrapper">
-	<label>First Name:</label>
-	<input type="text" >
+	<label for firstName>First Name *:</label>
+	<input id="firstName" name="firstName" type="text" required >
 </div>
 <div class="field-wrapper">
-	<label>Last Name:</label>
-	<input type="text" >
+	<label for lastName>Last Name *:</label>
+	<input id="lastName" name="lastName" type="text" required >
 </div>
 <div class="field-wrapper">
-	<label>Email:</label>
-	<input type="email" >
+	<label for email>Email *:</label>
+	<input id="email" name="email" type="email" required >
 </div>
 <div class="field-wrapper">
-	<label>Phone:</label>
-	<input type="phone" >
+	<label for phone>Phone:</label>
+	<input id="my-phone" name="my-phone" type="tel" >
 </div>
 <div class="field-wrapper">
-	<label>Comments:</label>
+	<label for comment>Comments:</label>
 	<textarea rows="4" cols="50">
 </textarea>
 </div>
 <div class="field-wrapper">
-	<button type="submit">Submit</button>
+	<button id="formSubmit" ng-click="formSubmit()">Submit</button>
 </div>
 </form>
+
+
+
+
 

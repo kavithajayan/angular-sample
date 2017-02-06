@@ -61,14 +61,30 @@ header a{
 
 label {
   width: 105px;
-  float: left;
   font-size: 16px;
   font-weight: bold;
   font-family: helvetica;
+  float: left;
 }
 
 button {
   text-align: center;
+}
+
+.error-message {
+  display: block;
+  width: 100%;
+  font-size: 12px;
+  color: red;
+  font-weight: normal;
+  padding-left: 110px;
+  padding-top: 3px;
+}
+
+.field-wrapper input {
+  width: auto;
+  display: inline;
+  padding-left: 1px;
 }
 
 

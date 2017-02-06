@@ -17,9 +17,53 @@
 }); */
 
 
-angular.module('myApp').controller('bookAuthorCtrl', function($scope, $http) {
+angular.module('myApp')
+	.controller('bookAuthorCtrl', function($scope, $http) {
 	$http.get('book-author.json').success(function (bookAuthor){
-		console.log(bookAuthor);
 		$scope.books = bookAuthor.bookAuthor;
-	});    
+	});   
+
+	$scope.formSubmit = function() {
+		$('form').validate({
+            rules: {            
+                'firstName': "required",
+
+                'lastName': "required",
+
+                'email': {
+                    required: true,
+                    email: true
+                },
+
+                'my-phone': {
+                	// selectCheck: true  
+                	number: true        
+                }
+                             
+            },
+            messages: {                    
+                'firstName': {
+                    required: "Firstname is required"
+                },
+                'lastName': {
+                    required: "</i>Lastname is required"
+                },
+                'email': {
+                    required: "Email address is required",
+                    email: "Please enter a valid email address"
+                }
+            },
+            errorClass: 'error-message'
+
+					
+        });
+
+		$.validator.addMethod("selectCheck", function(phone_number, element) {
+		    phone_number = phone_number.replace(/\s+/g, ""); 
+			return this.optional(element) || phone_number.length > 9 &&
+				phone_number.match(/^(\d+-?)+\d+$/);
+		}, "Please specify a valid phone number");
+	
+	};
 });
+
